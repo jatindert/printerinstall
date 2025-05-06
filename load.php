@@ -1,0 +1,125 @@
+<?php
+// load.php
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(to right, #ffffff 60%, #f4f6fa 40%);
+      overflow: hidden;
+    }
+
+    .loader-container {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .loader-box {
+      background: #fff;
+      padding: 70px 80px; /* Increased padding to make the box bigger */
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      animation: floatBox 3s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    .loader-box h2 {
+      font-size: 30px; /* Slightly bigger text */
+      margin-bottom: 20px;
+    }
+
+    .loader-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px; /* Increased gap between bars */
+      margin: 30px 0; /* Added more spacing */
+    }
+
+    .bar {
+      width: 16px; /* Made bars thicker */
+      height: 50px; /* Made bars taller */
+      background-color: #ff5733; /* Changed color */
+      animation: bounce 1.2s infinite ease-in-out;
+    }
+
+    .bar:nth-child(2) {
+      background-color: #33b5ff; /* Changed color */
+      animation-delay: 0.2s;
+    }
+
+    .bar:nth-child(3) {
+      background-color: #ffb833; /* Changed color */
+      animation-delay: 0.4s;
+    }
+
+    .bar:nth-child(4) {
+      background-color: #33ff57; /* Changed color */
+      animation-delay: 0.6s;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(1.8); }
+    }
+
+    @keyframes floatBox {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .loader-box p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .right-img {
+      width: 40%;
+      background: url('assets/images/ai.png') no-repeat center;
+      background-size: contain;
+      opacity: 0.15;
+    }
+  </style>
+  <script>
+    setTimeout(function () {
+      const searchTerm = sessionStorage.getItem('searchTerm') || '';
+      if (searchTerm.toLowerCase() === 'printer' || searchTerm.toLowerCase() === 'installation') {
+        window.location.href = 'result.php';
+      } else {
+        window.location.href = 'error.php';
+      }
+    }, 10000); /* 3-second delay before redirect */
+  </script>
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader-box">
+      <h2><strong>Page Loading </strong> </h2>
+      <div class="loader-bar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <p>Installing Drivers...</p>
+    </div>
+  </div>
+  <div class="right-img"></div>
+</body>
+</html>
