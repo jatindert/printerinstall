@@ -1,14 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error - Service Not Found</title>
+  <title>Installation Error</title>
   
   <!-- Bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ6f+6gFKRqaA1s9h+PpHFiLsCbdzXZJhHRQu8vEYrslWXGQYp3nZDGej5UB" crossorigin="anonymous">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -20,58 +18,61 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      padding: 20px;
+      min-height: 100vh;
     }
 
     .error-box {
       background-color: #ffffff;
-      padding: 40px 60px;
+      padding: 30px;
       border: 1px solid #ddd;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       max-width: 600px;
       width: 100%;
       text-align: center;
+      position: relative;
     }
 
     .error-header {
-      border-top: 5px solid #007bff; /* Blue line at the top */
+      border-top: 5px solid #dc3545; /* Red top bar */
       padding-top: 15px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .error-header h2 {
-      font-size: 28px;
-      color: #333;
-      margin-bottom: 10px;
+      font-size: 26px;
+      color: #dc3545;
+      font-weight: 600;
+    }
+
+    .error-icon {
+      font-size: 70px;
+      color: #dc3545;
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .printer-icon {
+      font-size: 40px;
+      color: #212529;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .error-box p {
       font-size: 16px;
-      color: #666;
-      margin-bottom: 20px;
-    }
-
-    .error-icon {
-      font-size: 80px;
-      color: #ff0000;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .printer-icon {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 40px;
-      color: #000;
+      color: #555;
+      margin-bottom: 12px;
     }
 
     .contact-info {
       font-size: 16px;
-      color: #333;
+      color: #000;
       margin-top: 20px;
-      font-weight: bold;
+      font-weight: 500;
     }
 
     .contact-info a {
@@ -79,22 +80,42 @@
       text-decoration: none;
     }
 
+    @media (max-width: 576px) {
+      .error-header h2 {
+        font-size: 22px;
+      }
+
+      .error-icon {
+        font-size: 60px;
+      }
+
+      .printer-icon {
+        font-size: 30px;
+        top: 20px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="error-box">
     <div class="error-header">
-      <h2>Service Not Found</h2>
+      <h2>Installing</h2>
+      <p><strong>Fatal error occurred during installation..</strong></p>
     </div>
+
     <div class="error-icon">
-      <i class="bi bi-exclamation-triangle"></i>
-      <i class="bi bi-printer printer-icon"></i> <!-- Printer icon from Bootstrap Icons -->
+      <i class="bi bi-x-circle-fill"></i>
+      <i class="bi bi-printer printer-icon"></i>
     </div>
-    <p>Sorry, we couldn't find any matching installation or printer service. Please try a different search.</p>
-    <p class="contact-info">If you need further assistance, please contact us at <a href="tel:+1234567890">+1 234 567 890</a>.</p>
+
+    
+    <p>Printer driver installation has been failed due to fatal error <strong>"C0000022"</strong> preventing product driver installation.</p>
+    <p>Please contact our Printer Expert For Assistance.</p>
+
+    <p class="contact-info">Call us at <a href="tel:(855) 602-0878">(855) 602-0878</a></p>
   </div>
 
-  <!-- Bootstrap JS (optional for future use) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0sW9bPi/ih9mQ4hGmW5fg8W8cpGBHb5dDBeI5BfhxwLhfvdi" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
